@@ -1,0 +1,21 @@
+.abc{
+    padding:16px;
+    border:2px solid;
+    margin:16px;
+}
+
+/*
+div{
+    color:red;
+}
+#username{ 
+    font-size:30px;
+    color:green;
+}
+.para{ 
+    border:8px solid yellow;
+}
+*/
+
+/* # means: I fetch an Id with the following name   */
+/* . means: I fetch a class with the following name */
