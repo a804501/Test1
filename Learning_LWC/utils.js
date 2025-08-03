@@ -1,7 +1,7 @@
 /************Modules Import and Export***************************/
 
 // Here we will write our re-usable vars and methods and from here we are going to export them
-// to script.js 
+// to other js files that can decide to import them. 
 
 
 // 1) Exporting during declaration of a var or a function
@@ -23,7 +23,7 @@ function substract(a,b){
 export {a, substract} // Exporting a list of vars and functions, previously declared
 
 
-// 3) Exporting, using an alias
+// 3) Exporting, using an alias; The alias will be used in the imported file(s).
 
 const b_data = "Bravo"
 function divide(a,b){
@@ -31,7 +31,7 @@ function divide(a,b){
 }
 export {b_data as b, divide as div}
 
-// 4) Export with default (only for 1 var or function)
+// 4) Export with default (only possible for 1 var or function)
 
 export default function minus(a,b) {
     console.log(a-b)
