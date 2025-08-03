@@ -1,23 +1,8 @@
-/************Destructuring***************************/
-// Destructuring means: extracting some data
+/************String interpolation***************************/
+// Allow you to embed expression in a string
 
-
-// Aray destructuring
-
-let arr = ["amazon", "google"]
-let [company1, company2] = arr // Aray destructuring
-console.log(company1)
-console.log(company2)
-
-
-// Object destructuring
-
-let options = {
-    title:"zero to hero",
-    age:23,
-    type:"CRM"
-}
-let {title, age, type} = options // Object destructuring
-console.log(title)
-console.log(age)
-console.log(type)
+var a = 10
+var b = 10
+console.log(`the sum of ${a} and ${b} is ${a+b}`)
+var recordId = 986565555
+console.log(`https://salesforce.com/${recordId}`)
