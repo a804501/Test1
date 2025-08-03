@@ -1,11 +1,27 @@
-/************var keyword***************************/
-// It can be updated and also it can be re-declared
+/************Promises***************************/
+// Explanation
 
-var course = "zero to hero"
-console.log(window.course)
-
-function abc(){
-    var anothercourse = "hero in lwc"
-    console.log(anothercourse)
+function checkIsSuccess(data){
+    return new Promise(function(resolve, reject){
+        if (data === "success"){
+            return resolve("successfully executed")
+        } else {
+            return reject("unsuccessfully executed")
+        }
+    
+    })
 }
-abc()
+
+checkIsSuccess('success').then(function(result){
+    console.log(result)
+}).catch(function(error){
+    console.error("Err: " + error)
+})
+
+// Real example
+
+fetch('https://api.github.com/users/karkranikhil').then(function(result){
+    return result.json()
+}).then(function(response){
+    console.log(response)
+})
