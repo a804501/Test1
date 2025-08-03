@@ -1,35 +1,27 @@
-/************Query Selector***************************/
+/************Object/JSON Operations***************************/
 
-// CSS Selectors that exist: element name, class name, id name
+// We create an object with a number of properties
+let obj = {
+    name:"Salesforce",
+    age:23,
+    dob:'23/10/1990'  
+}
 
-// querySelector() method: returns the first element in the document 
-// that matches a specified CSS selector. The document is the html file in the DOM.
-// Ex: document.querySelector(css_selector)
-// Allows you to change that particular element in the DOM
+// Object operations
 
-// querySelectorAll() method: returns all elements in the document
-// that matches a specified CSS selector
-// Ex: document.querySelectorAll(css_selector)
+// Extract all the keys from an object. The keys are the properties of the object.
+console.log(Object.keys(obj)) // Returns an array with all keys: ['name', 'age', 'dob']
 
-// Run some code in JS by which I am able to fetch the first div element from the DOM:
-let element = document.querySelector('div')
-console.log(element) // Returns: <div>Hello everyone</div>
-console.log(element.innerText) // Returns: Hello everyone
-// Now I can modify this element in the DOM, by for instance applying some style:
-element.style.color = "red" // The corresponding element in the DOM turned red
+// Extract all the values from an object.
+console.log(Object.values(obj)) // Returns an array with all values: ['Salesforce', 23, '23/10/1990']
 
-// Now using a class name as css_selector to fetch a particular element:
-let el = document.querySelector('.abc')
-console.log(el) // Returns: <h1 class="abc">Hi there</h1>
+// JSON operations
 
-// Fetch a list of all div elements from the DOM:
-let elementList = document.querySelectorAll('div')
-console.log(elementList) 
-// Returns the list of div elements in the form of a "node list":
-// <div>Hello everyone</div>, <div>Hello LWC Developers</div>, <div>Hello Maarten</div>
+// Convert an object into a string format = serialization
+let str = JSON.stringify(obj)
+console.log(str) 
+// returns the object as a string: {"name":"Salesforce","age":23,"dob":"23/10/1990"}
 
-// Convert the nodelist into an array, using the following method: Array.from(nodelist)
-// and then loop through the array items to turn each element into green color.
-Array.from(elementList).forEach(function(currentItem){
-    currentItem.style.color="green" 
-})
+// Convert the string of an object to an object = deserialization
+console.log(JSON.parse(str))
+// Deserializes the string into an object: {name: 'Salesforce', age: 23, dob: '23/10/1990'}
