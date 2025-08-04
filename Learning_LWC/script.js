@@ -1,51 +1,39 @@
-/************Events***************************/
+/************Arrow function***************************/
 
-function firstFunction(){
-    console.log("Hurray")
+// Use case 1
+
+function abc(){
+    console.log("Hello")
 }
+abc()
+
+const def = ()=>console.log("Hello again")
+def()
 
 // Use case 2
-let btn = document.querySelector(".clk2")
-btn.addEventListener("click", firstFunction)
 
-// Use case 3
-// Add an eventlistener on document level. It represents the entire webpage.
-// We do this because we want to listen to the event: "changing the mouse position
-// on the webpage".
-// Upon this event, so each time you move the mouse, 
-// we want to display a different random number on the position of the div tag with class "demo".
-document.addEventListener("mousemove", handler)
-
-function handler(){
-    document.querySelector(".demo").innerHTML = Math.random()    
+function sum(data1,data2){
+    let sum = data1 + data2 + 10
+    return sum
 }
+console.log(sum(10,5))
 
-// Use case 4: As soon as we click a button, we want the event handler of use case 3 to be removed.
-// This causes the mouse position changing event no longer to display the 
-// random number on the div tag.
-function removehandler(){
-    document.removeEventListener("mousemove", handler)
+const add =(data1, data2)=>{
+    let sum = data1 + data2 + 10
+    return sum
 }
+console.log(add(10,5))
 
-// Use case 5: Custom event.
-function callCustomMethod(){
-    // Create a custom event
-
-    // Custom event constructor with as params: 
-    // param 1: custom event name "Hello" 
-    // param 2: options with as one of the properties "detail", which allows you to pass the data,
-    // like for instance an object.
-    let event = new CustomEvent("hello",{
-        detail:{name:"maarten"}
-    })
-    // Now I want to dispatch that custom event
-    document.dispatchEvent(event)
+function sum2(data1,data2){
+    return data1 + data2 + 10
 }
+console.log(sum2(10,5))
 
-// We want somebody to listen to that event. Who will be listening? Our document, with the 
-// following code:
-document.addEventListener("hello", handler2)
+const sum3 =(data1, data2)=>data1 + data2 + 10
+console.log(sum3(10,5))
 
-function handler2(data){
-    console.log("hello event has been called. The following data was sent ", data.detail)
+// Use case 3: array method map
+var arr = [1,2,3,4]
+arr.map(item){
+    return item * 2
 }
