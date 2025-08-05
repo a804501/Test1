@@ -1,10 +1,14 @@
 <template>
-    <div>Hello World {fullname}</div>
-    <div>{details.place}</div>
 
-    <!--One way data binding:
-    data is flowing from the controller to the html.
-    In html, whenever we want to bring something from JS we use expression brackets: {expression}.
-    This binds the JS property to the expression in html.
-    -->
+    <lightning-card  title="Two Way Data Binding">
+        <div class="slds-m-around_medium">
+            <lightning-input type="text" 
+                label="Enter Course Name" 
+                onkeyup={changeHandler}>
+            </lightning-input>
+            <!--As soon as the event "user key gets up" occurs, we call the handler-->
+            <div>{fullname} is a course of {title}</div>
+        </div>        
+    </lightning-card>
+
 </template>
