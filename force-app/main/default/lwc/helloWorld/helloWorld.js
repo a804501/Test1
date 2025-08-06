@@ -25,4 +25,17 @@ export default class HelloWorld extends LightningElement {
         this.address = {...this.address, city: event.target.value}
     }
 
+    users = ["John", "Mike", "Smith"]
+
+    get firstUser() {
+        return this.users[0]
+    }
+
+    num1 = 10
+    num2 = 20
+
+    get multiply(){
+        return this.num1*this.num2
+    }
+
 }
