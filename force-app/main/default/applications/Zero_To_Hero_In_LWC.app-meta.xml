@@ -13,6 +13,8 @@
     <label>Zero To Hero In LWC</label>
     <navType>Standard</navType>
     <tabs>LWC_Fundamentals</tabs>
+    <tabs>Quiz_App</tabs>
+    <tabs>Styling_in_LWC</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Zero_To_Hero_In_LWC_UtilityBar</utilityBar>
 </CustomApplication>
